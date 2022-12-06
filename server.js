@@ -1,14 +1,16 @@
 const express = require('express');
+const sequelize = require('./config/connection');
 
-const termData = require('./terms.json');
-const PORT = 3001;
+// Import models to sync with the database
+const models = require('./models');
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 
-app.get('/', (req, res) => res.send('Visit http://localhost:3001/api'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/api', (req, res) => res.json(termData));
-
-app.listen(PORT, () =>
-  console.log(`Example app listening at http://localhost:${PORT}`)
-);
+// turn on connection to db and server
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
