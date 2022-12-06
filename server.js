@@ -1,16 +1,21 @@
 const express = require('express');
-const sequelize = require('./config/connection');
-
-// Import models to sync with the database
-const models = require('./models');
+const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));
 
-// turn on connection to db and server
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
+app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
+
+app.get('/send', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/send.html'))
+);
+
+app.get('/paths', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/paths.html'))
+);
+
+app.listen(PORT, () =>
+  console.log(`Example app listening at http://localhost:${PORT}`)
+);
