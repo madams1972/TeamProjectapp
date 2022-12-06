@@ -1,26 +1,21 @@
-const path = require('path');
 const express = require('express');
-const exphbs = require('express-handlebars');
-const routes = require('./controllers');
-const helpers = require('./utils/helpers');
-const sequelize = require('./config/connection');
+const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 
-// Create the Handlebars.js engine object with custom helper functions
-const hbs = exphbs.create({ helpers });
+app.use(express.static('public'));
 
-// Inform Express.js which template engine we're using
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.get('/send', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/send.html'))
+);
 
-app.use(routes);
+app.get('/paths', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/paths.html'))
+);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
+app.listen(PORT, () =>
+  console.log(`Example app listening at http://localhost:${PORT}`)
+);

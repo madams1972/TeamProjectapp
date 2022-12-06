@@ -1,14 +1,17 @@
-{
-  "name": "quizelle",
+
+  "name": "teamprojectapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "TeamProjectapp",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "start": "node server.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madams1972/TeamProjectapp.git"
+  },
+
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -18,5 +21,3 @@
     "express-handlebars": "^5.2.0",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-  }
-}
