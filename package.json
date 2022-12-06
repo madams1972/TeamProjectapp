@@ -1,0 +1,20 @@
+{
+  "name": "teamprojectapp",
+  "version": "1.0.0",
+  "description": "TeamProjectapp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madams1972/TeamProjectapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madams1972/TeamProjectapp/issues"
+  },
+  "homepage": "https://github.com/madams1972/TeamProjectapp#readme"
+}
