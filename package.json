@@ -1,4 +1,4 @@
-{
+
   "name": "teamprojectapp",
   "version": "1.0.0",
   "description": "TeamProjectapp",
@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/madams1972/TeamProjectapp.git"
   },
+
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -20,7 +21,3 @@
     "express-handlebars": "^5.2.0",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-    
-  },
-  "homepage": "https://github.com/madams1972/TeamProjectapp#readme"
-}
