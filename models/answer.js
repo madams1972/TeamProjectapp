@@ -9,6 +9,9 @@ ANSWER.init (
             type: DataTypes.STRING,
             allowNull:false,
             primaryKey: true
-        }
-    }
-)
+        },
+        sequelize,
+        moduleName:'answers',
+    } 
+);
+ module.exports = answers;
