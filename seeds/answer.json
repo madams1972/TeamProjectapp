@@ -1,8 +1,52 @@
 [
     {
-        "answer_1": "<JavaScript>",
-        "answer_2": "<Script>",
-        "answer_3": "<scripting>",
-        "answer_4": "<js>"
+       "qusetion_One": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion_two": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion+_three": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion_four": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion_five": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion_six": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion_seven": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion_eight": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion_nine": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
+    },
+    {
+       "qusetion_ten": "this is question",
+       "chocies": ["option1", "option2", "option3", "option4"],
+       "answer": "option1"
     }
 ]
