@@ -19,12 +19,6 @@ Quiz.init (
         type: DataTypes.STRING,
         allowNull: false,
       },
-      
-      sequelize,
-      timestamps: false,
-      freezeTableName: true,
-      underscored: true,
-      modelName: 'user',
 },
 {
   sequelize,
@@ -34,4 +28,4 @@ Quiz.init (
   modelName: 'user',
 });
 
-module.exports
+module.exports = Quiz;
