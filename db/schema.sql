@@ -1,6 +1,6 @@
-CREATE DATABASE answers_db;
+DROP DATABASE IF EXISTS example_db;
 
-use answers_db
+CREATE DATABASE example_db;
 
 CREATE TABLE answer(
     id VARCHAR(10)
