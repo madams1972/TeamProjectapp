@@ -1,3 +1,19 @@
 DROP DATABASE IF EXISTS qwizzler!_db;
 
 CREATE DATABASE qwizzler!_db;
+
+CREATE TABLE users (
+  id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE scores (
+  id INT NOT NULL AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  score INT NOT NULL,
+  date DATETIME NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES users(id)
+);
