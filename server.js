@@ -6,7 +6,7 @@ const sequelize = require('./config/connection');
 const path = require('path');
 
 const app = express();
-const PORT = 3001;
+const PORT = 3306;
 
 // Create the Handlebars.js engine object with custom helper functions
 const hbs = exphbs.create({ helpers });
@@ -18,19 +18,19 @@ app.set('views', './views');
 
 app.use(express.static('public'));
 
-// app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
+app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
 
-// app.get('/', (req, res) => {
-//   res.render('homepage');
-// });
+app.get('/', (req, res) => {
+  res.render('homepage');
+});
 
-// app.get('/login', (req, res) => {
-//   res.render('login');
-// });
+app.get('/login', (req, res) => {
+  res.render('login');
+});
 
-// app.get('/send', (req, res) =>
-//   res.sendFile(path.join(__dirname, 'public/send.html'))
-// );
+app.get('/send', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/send.html'))
+);
 
 app.use(routes);
 
@@ -39,7 +39,7 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
-// app.get('/paths', (req, res) =>
-//   res.sendFile(path.join(__dirname, 'public/paths.html'))
-// );
+app.get('/paths', (req, res) =>
+  res.sendFile(path.join(__dirname, 'public/paths.html'))
+);
 
