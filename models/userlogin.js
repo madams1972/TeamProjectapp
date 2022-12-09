@@ -1,22 +1,25 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Userlogin extends Model {}
 
 Userlogin.init(
-    {
-        quiz_id: { 
-            type: DataType.INTGER,
-            refernce: {
-                model: quiz,
-                key: 'id'
-            },
-        },
+  {
+    quiz_id: {
+      type: DataTypes.INTEGER,
+      refernce: {
+        model: "quiz",
+        key: "id",
+      },
+    },
+  },
+  {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'userlogin'   
-});
+    modelName: "userlogin",
+  }
+);
 
 module.exports = Userlogin;

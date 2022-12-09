@@ -1,26 +1,25 @@
-const User = require('./user');
-const Answers = require('./answer')
-const Quizes = require('./quiz')
-const Questions = require('./question')
-
-User.hasMany(Quizes, {
-    foreignKey:"user_id"
+// const User = require('./user');
+const Answer = require('./answer');
+const Quiz = require('./quiz');
+const Question = require('./question');
+const Useranswer = require('./useranswer');
+const Userlogin = require('./userlogin');
+ 
+Answer.belongsTo(Question,{
+    foreignKey: 'question_id' 
 });
- Quizes.belongsTo(User,{
-    foreignKey:"user_id"
- });
- User.hasMany(Questions, {
-    foreignKey:"user_id"
-})
-Questions.belongsTo(User,{
-    foreignKey:"user_id"
-})
-User.hasMany(Answers, {
-    foreignKey:"user_id"
+Question.hasMany(Answer, {
+    foreignKey: 'question_id'
 });
-Answers.belongsTo(User,{
-    foreignKey:"user_id"
-})
+
+Question.belongsTo(Quiz, {
+    foreignKey: 'quiz_id'
+});
+
+Quiz.hasMany(Question, {
+    foreignKey: 'quiz_id'
+});
 
 
-module.exports = { User,Answers,Quizes,Questions};
+
+module.exports = {  Answer, Quiz, Question, Useranswer, Userlogin};
