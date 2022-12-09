@@ -2,14 +2,8 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Quizes extends Model {}
-
-<<<<<<< HEAD
 Quizes.init (
     {
-=======
-Quiz.init(
-  {
->>>>>>> 89fabfd5f8e3b63335f95df74c0980a223b5e1e8
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -34,8 +28,7 @@ Quiz.init(
   }
 );
 
-<<<<<<< HEAD
 module.exports = Quizes
-=======
-module.exports = Quiz;
->>>>>>> 89fabfd5f8e3b63335f95df74c0980a223b5e1e8
+
+
+
