@@ -1,4 +1,4 @@
-const User = require('./user');
+// const User = require('./user');
 const Answer = require('./answer');
 const Quiz = require('./quiz');
 const Question = require('./question');
@@ -22,4 +22,4 @@ Quiz.hasMany(Question, {
 
 
 
-module.exports = { User, Answer, Quiz, Question, Useranswer, Userlogin};
+module.exports = {  Answer, Quiz, Question, Useranswer, Userlogin};

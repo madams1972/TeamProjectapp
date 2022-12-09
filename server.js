@@ -6,7 +6,7 @@ const sequelize = require('./config/connection');
 const path = require('path');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Create the Handlebars.js engine object with custom helper functions
 // const hbs = exphbs.create({ helpers });
@@ -26,15 +26,12 @@ app.get('/send', (req, res) =>
 
 // app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
-
 
 app.get('/paths', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/paths.html'))
 );
 
-app.listen(PORT, () =>
-  console.log(`Example app listening at http://localhost:${PORT}`)
-);
+
+sequelize.sync({ force: true }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
