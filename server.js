@@ -34,7 +34,6 @@ app.get('/send', (req, res) =>
 
 app.use(routes);
 
-
 app.get('/paths', (req, res) =>
   res.sendFile(path.join(__dirname, 'public/paths.html'))
 );
