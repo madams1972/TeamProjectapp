@@ -23,4 +23,4 @@ Answers.belongsTo(User,{
 })
 
 
-module.exports = { User,Answer,Quizes,Questions};
+module.exports = { User,Answers,Quizes,Questions};
