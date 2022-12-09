@@ -12,8 +12,12 @@ router.get('/', (req, res) => {
     res.render('game');
   });
 
-  router.get('/newuser', (req, res) => {
+  router.get('/passwordreset', (req, res) => {
     res.render('passwordreset');
+  });
+
+  router.get('/newuser', (req, res) => {
+    res.render('newuser');
   });
 
   module.exports = router;
