@@ -1,14 +1,14 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Useranswers extends Model {}
+class Userlogin extends Model {}
 
-Useranswers.init(
+Userlogin.init(
   {
-    answer_id: {
+    quiz_id: {
       type: DataTypes.INTEGER,
       refernce: {
-        model: "answer",
+        model: "quiz",
         key: "id",
       },
     },
@@ -18,8 +18,8 @@ Useranswers.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "useranswer",
+    modelName: "userlogin",
   }
 );
 
-module.exports = Useranswers;
+module.exports = Userlogin;

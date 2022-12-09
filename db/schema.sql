@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS qwizzler!_db;
+DROP DATABASE IF EXISTS qwizzler_db;
 
-CREATE DATABASE qwizzler!_db;
+CREATE DATABASE qwizzler_db;

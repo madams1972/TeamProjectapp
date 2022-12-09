@@ -4,4 +4,4 @@ const sequelize = require("../config/connection.js");
 
 class Game extends Model {}
 
-Game.init(
+Game.init()

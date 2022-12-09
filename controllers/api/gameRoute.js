@@ -1,20 +1,20 @@
-const router = require('express').Router();
-const withAuth = require('../../utils/auth');
-const GameClass = require('../../classes/Game');
-const game = new GameClass;
+// const router = require('express').Router();
+// const withAuth = require('../../utils/auth');
+// const GameClass = require('../../classes/Game');
+// const game = new GameClass;
   
-  router.post('/gamestart', withAuth, async (req, res) => {
+  // router.post('/gamestart', withAuth, async (req, res) => {
     
-    try{
+  //   try{
         
-      req.session.save(()=>{
-        res.status(200).json({message: "Game Starting"});
-      });
+  //     req.session.save(()=>{
+  //       res.status(200).json({message: "Game Starting"});
+  //     });
       
-    }
-    catch (err){
-      res.status(404).json({title:"Error", message: err});
-    }
-  });
+  //   }
+  //   catch (err){
+  //     res.status(404).json({title:"Error", message: err});
+  //   }
+  // });
 
-  module.exports = router;
+  // module.exports = router;
