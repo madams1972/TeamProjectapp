@@ -9,16 +9,16 @@ Useranswers.init(
       type: DataTypes.INTEGER,
       refernce: {
         model: "answer",
-        key: "id",
-      },
-    },
+        key: "id"
+      }
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "useranswer",
+    modelName: "useranswer"
   }
 );
 

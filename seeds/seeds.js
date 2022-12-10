@@ -5,9 +5,9 @@ const seedQuiz = require("./quiz.js");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  await seedAnswer();
-  await seedQuestion();
   await seedQuiz();
+  await seedQuestion();
+  await seedAnswer();
 
   process.exit(0);
 };

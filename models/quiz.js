@@ -9,15 +9,15 @@ Quiz.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: true
     },
     level: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
   },
   {
@@ -25,8 +25,7 @@ Quiz.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "quiz",
-  }
-);
+    modelName: "quiz"
+  });
 
 module.exports = Quiz;
