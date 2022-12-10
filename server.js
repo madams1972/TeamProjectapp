@@ -39,5 +39,5 @@ app.get('/paths', (req, res) =>
 );
 
 sequelize.sync({ force: true }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening' ));
 });
