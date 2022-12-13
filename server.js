@@ -2,12 +2,11 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers/api/routes');
 const helpers = require('./utils/helpers/helpers');
-const mysql = require('mysql');
 const sequelize = require('./config/connection');
 const path = require('path');
 
 const app = express();
-const PORT = 3306;
+const PORT = 3001;
 
 // Create the Handlebars.js engine object with custom helper functions
 const hbs = exphbs.create({ helpers });
