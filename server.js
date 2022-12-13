@@ -18,7 +18,7 @@ app.set('views', './views');
 
 app.use(express.static('public'));
 
-app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
+// app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
 
 app.get('/', (req, res) => {
   res.render('homepage');
