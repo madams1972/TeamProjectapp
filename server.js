@@ -1,43 +1,43 @@
 const express = require('express');
-const exphbs = require('express-handlebars');
-const routes = require('./controllers/api/routes');
-const helpers = require('./utils/helpers/helpers')
-const sequelize = require('./config/connection');
+const session = require('express-session');
+
+//When paths have been changed in controllers, please adjust path accordingly
+const routes = require('./controllers/routes');
 const path = require('path');
+const sequelize = require('./config/connection');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const helpers = require('./utils/helpers/helpers');
+const exphbs = require('express-handlebars');
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Create the Handlebars.js engine object with custom helper functions
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {
+    expires: 10 * 60 * 1000
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
 const hbs = exphbs.create({ helpers });
 
-// Inform Express.js which template engine we're using
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', './views');
-
-app.use(express.static('public'));
-
-app.get('/', (req, res) => res.send('Navigate to /send or /routes'));
-
-app.get('/', (req, res) => {
-  res.render('homepage');
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.get('/send', (req, res) =>
-  res.sendFile(path.join(__dirname, 'public/send.html'))
-);
 
 app.use(routes);
 
-app.get('/paths', (req, res) =>
-  res.sendFile(path.join(__dirname, 'public/paths.html'))
-);
-
-sequelize.sync({ force: true }).then(() => {
-  app.listen(PORT, () => console.log('Now listening' ));
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
 });
