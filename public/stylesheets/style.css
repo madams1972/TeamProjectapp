@@ -24,7 +24,7 @@ body {
     background: var(--primary);
 }
 
-.truevia-container {
+.Qwizller-container {
     display:flex;
     color: var(--secondary)
 }
