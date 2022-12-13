@@ -4,6 +4,8 @@ const Quiz = require("./quiz");
 const Question = require("./question");
 const Useranswer = require("./useranswer");
 const Userlogin = require("./userlogin");
+const User = require("./user");
+
 
 Answer.belongsTo(Question, {
   foreignKey: "question_id",
@@ -20,4 +22,4 @@ Quiz.hasMany(Question, {
   foreignKey: "quiz_id",
 });
 
-module.exports = { Answer, Quiz, Question, Useranswer, Userlogin, Score };
+module.exports = { Answer, Quiz, Question, Useranswer, Userlogin, Score, User };
