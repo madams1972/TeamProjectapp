@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS Qwizzler_db;
+
+CREATE DATABASE Qwizzler_db;
