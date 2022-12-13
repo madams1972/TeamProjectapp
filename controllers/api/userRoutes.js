@@ -1,10 +1,11 @@
 const router = require("express").Router()
-const {User} = require("../../models")
+const  User  = require("../../models/user");
 
 router.post('/login', async(req, res)=>{
     try {
+        // console.log(User)
         const userData= await User.findOne({where:{id:req.body.username} });
-
+        console.log(userData)
     if (!userData){
         res
         .status(400)
@@ -30,3 +31,5 @@ if (!validPassword) {
     res.status(400).json(err);
   }
 });
+
+module.exports = router;
