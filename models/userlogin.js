@@ -9,16 +9,16 @@ Userlogin.init(
       type: DataTypes.INTEGER,
       refernce: {
         model: "quiz",
-        key: "id",
-      },
-    },
+        key: "id"
+      }
+    }
   },
   {
     sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "userlogin",
+    modelName: "userlogin"
   }
 );
 
