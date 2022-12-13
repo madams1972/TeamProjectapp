@@ -1,16 +1,32 @@
-<section class="container container-fluid mt-5">
-    <section class="container-fluid">
-      <div class="jumbotron">
-        <h1 class="display-4 glow" style="color: white">Welcome!, {{userFullname}}</h1>
-        {{#if gameData includeZero=false}}
-        <div class="alert alert-primary" role="alert">
-          You already have an Active game saved, click <a href="/gamestart/{{gameData.game_id}}"><button class="btn btn-dark" type="button" id="start-game">Resume Game</button></a> to continue playing from where you left. Otherweise, start new game by pressing link below.
-          
-        </div>
-        {{/if}}
-        <div class="game-buttons">
-            <a href="/game"><button class="btn btn-dark" type="button" id="start-game">Start Game</button> </a>
-        </div>
+  <main>
+      <div class="container">
+          <div class="logo-banner d-flex justify-content-between jumbotron jumbotron-fluid m-3">
+              <div class="dashboard-header">
+                  <h1>Dashboard of {{username}}</h1>
+              </div>
+          </div>
+
+          <div class="score-display " id="score-display">
+              <div class="top-scores text-center mt-3 mb-3" id="score-display-area">
+                  <h2 class="your-score">Your High Scores</h2>
+              </div>
+              <div class="score-card">
+                  <div class="jumbotron jumbotron-fluid">
+                      <div class="container">
+                          {{#if scores.length}}
+                              <section>
+                                  <ol class="list-group list-group-numbered">
+                                      {{#each scores as |score|}}
+                                          {{> scores-list score}}
+                                      {{/each}}
+                                  </ol>
+                              </section>
+                          {{/if}}
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </section>
-</section>
+  </main>
+
+  <script src="/javascript/dashboard.js"></script>
