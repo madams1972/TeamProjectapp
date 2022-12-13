@@ -2,7 +2,7 @@ const express = require('express');
 const session = require('express-session');
 
 //When paths have been changed in controllers, please adjust path accordingly
-const routes = require('./controllers/routes');
+const routes = require('./controllers/userRoutes');
 const path = require('path');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
