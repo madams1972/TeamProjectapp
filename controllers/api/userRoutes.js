@@ -8,7 +8,7 @@ const User = require("../../models/user");
 //         console.log(userData)
 //     if (!userData){
 //         res
-router.post("/", async (req, res) => {
+router.post("/newuser", async (req, res) => {
   try {
     const userData = await User.create({
       username: req.body.username,
@@ -20,8 +20,7 @@ router.post("/", async (req, res) => {
       res.status(200).json(userData);
     });
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
+    res.status(400).json(err);
   }
 });
 
