@@ -1,18 +1,43 @@
 <section class="container container-fluid mt-5">
-    <section class="container-fluid">
-      <div class="jumbotron">
-        <h1 class="mx-auto" style="color: black">Welcome! </h1>
-        <h1 id="displayUsername" class="mx-auto" style="color: black"> </h1>
-        {{#if gameData includeZero=false}}
-        <div class="alert alert-primary" role="alert">
-          You already have an Active game saved, click <a href="/gamestart/{{gameData.game_id}}"><button class="btn btn-dark" type="button" id="start-game">Resume Game</button></a> to continue playing from where you left. Otherweise, start new game by pressing link below.
+  <link rel="stylesheet" type="text/css" href="" style.css>
+  <section class="container-fluid">
+    <div class="jumbotron">
+      <h1 class="mx-auto" style="color: black">Welcome! </h1>
+      <h1 id="displayUsername" class="mx-auto" style="color: black"> </h1>
+      {{#if gameData includeZero=false}}
+      <div class="alert alert-primary" role="alert">
+        You already have an Active game saved, click <a href="/gamestart/{{gameData.game_id}}"><button
+            class="btn btn-dark" type="button" id="start-game">Resume Game</button></a> to continue playing from where
+        you left. Otherweise, start new game by pressing link below.
 
-        </div>
-        {{/if}}
-        <div class="game-buttons">
-            <a href="/game"><button class="btn btn-dark col-12" type="button" id="start-game">Start Game</button> </a>
-        </div>
       </div>
-    </section>
+      {{/if}}
+      <div class="game-buttons d-flex justify-content-center">
+        <a href="/game"><button class="btn btn-dark col-12" type="button" id="start-game">Start Game</button> </a>
+      </div>
+<div class="d-flex justify-content-center">
+  <img src="../images/3700_2_08.jpg" alt="Astronaut" width="500" height="500">
+</div>
+    </div>
+  </section>
 </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+  anime({
+    targets: 'h1',
+    translateX: 250,
+    rotate: '1turn',
+    backgroundColor: '#FFF',
+    duration: 800
+  })
+</script>
+<script>
+  anime({
+  targets: 'img',
+  left: '240px',
+  backgroundColor: '#FFF',
+  borderRadius: ['0%', '50%'],
+  easing: 'easeInOutQuad'
+  })
+</script>
 <script src="./js/getState.js"></script>

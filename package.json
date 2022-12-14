@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animejs": "^3.2.1",
     "bcryptjs": "^2.4.3",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",

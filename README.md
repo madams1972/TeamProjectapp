@@ -1,4 +1,4 @@
-# Project project 2, TeamProjectApp 
+# Project 2, TeamProjectApp 
 
   ## Table of contents 
 
