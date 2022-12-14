@@ -1,5 +1,5 @@
 // const router = require("express").Router();
-// const withAuth = require("../../utils/auth");
+// const withAuth = require("../../utils/helpers/helpers");
 // const GameClass = require("../../classes/Game");
 // const game = new GameClass();
 
