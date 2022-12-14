@@ -1,13 +1,7 @@
-const router = require("express").Router()
-const  User  = require("../../models/user");
+const router = require("express").Router();
+const User = require("../../models/user");
 
-// router.post('/login', async(req, res)=>{
-//     try {
-//         // console.log(User)
-//         const userData= await User.findOne({where:{id:req.body.username} });
-//         console.log(userData)
-//     if (!userData){
-//         res
+
 router.post("/newuser", async (req, res) => {
   try {
     const userData = await User.create({
@@ -22,10 +16,6 @@ router.post("/newuser", async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-  // {
-  //   console.log(err);
-  //   res.status(500).json(err);
-  // }
 });
 
 router.post("/login", async (req, res) => {
@@ -48,7 +38,9 @@ router.post("/login", async (req, res) => {
     }
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
+      req.session.username= userData.username;
+
+      req.session.loggedIn = true;
 console.log("Checking the front end")
       res.status(200).json({ user: userData, message: "You're in!" });
     });
@@ -63,6 +55,19 @@ router.post("/logout", (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
+  } else {
+    res.status(404).end();
+  }
+});
+
+router.get("/getstate", (req, res) => {
+  if (req.session.loggedIn) {
+    res.status(200).json({ loggedIn: true, username: req.session.username});
+  }
+    else if (!req.session.loggedIn){
+      res.status(200).json({ loggedIn: false, username: null});
+
+    
   } else {
     res.status(404).end();
   }

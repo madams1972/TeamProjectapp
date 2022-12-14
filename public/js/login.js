@@ -2,7 +2,7 @@ const loginFormHandler = async (event) => {
     event.preventDefault();
   
     // Collect values from the login form
-    const username = document.querySelector('#email-login').value.trim();
+    const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
     console.log({ username, password })
     if (username && password) {
@@ -14,7 +14,7 @@ const loginFormHandler = async (event) => {
       });
       // console.log(response.json())
       if (response.ok) {
-        document.location.replace('/game');
+        document.location.replace('/');
         // console.log(response.json())
       } else {
         alert("Wrong username or password");

@@ -1,7 +1,8 @@
 <section class="container container-fluid mt-5">
     <section class="container-fluid">
       <div class="jumbotron">
-        <h1 class="display-4 glow" style="color: white">Welcome!, {{userFullname}}</h1>
+        <h1 class="mx-auto" style="color: black">Welcome! </h1>
+        <h1 id="displayUsername" class="mx-auto" style="color: black"> </h1>
         {{#if gameData includeZero=false}}
         <div class="alert alert-primary" role="alert">
           You already have an Active game saved, click <a href="/gamestart/{{gameData.game_id}}"><button class="btn btn-dark" type="button" id="start-game">Resume Game</button></a> to continue playing from where you left. Otherweise, start new game by pressing link below.
@@ -9,9 +10,9 @@
         </div>
         {{/if}}
         <div class="game-buttons">
-            <a href="/game"><button class="btn btn-dark" type="button" id="start-game">Start Game</button> </a>
+            <a href="/game"><button class="btn btn-dark col-12" type="button" id="start-game">Start Game</button> </a>
         </div>
-          {{!-- <script src="../../public/js/login.js"></script> --}}
       </div>
     </section>
 </section>
+<script src="./js/getState.js"></script>
