@@ -2,6 +2,9 @@
   "name": "teamprojectapp",
   "version": "1.0.0",
   "description": "TeamProjectapp",
+  "engines": { 
+    "node": "18.6.0" 
+ },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
