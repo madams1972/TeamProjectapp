@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const  User  = require("../../models/user");
+const {User} = require("../../models")
 
 router.post("/", async (req, res) => {
   try {
@@ -8,13 +8,12 @@ router.post("/", async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
+
     req.session.save(() => {
       req.session.loggedIn = true;
       res.status(200).json(userData);
     });
-  } catch {
-    err;
-  }
+  } catch(err)
   {
     console.log(err);
     res.status(500).json(err);
@@ -60,5 +59,5 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
-
 module.exports = router;
+
