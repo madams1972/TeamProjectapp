@@ -1,17 +1,12 @@
-// const router = require("express").Router();
-// const withAuth = require("../../utils/helpers/helpers");
-// const GameClass = require("../../classes/Game");
-// const game = new GameClass();
+const router = require("express").Router();
+const Question = require("../../seed/question");
+const Answer = require('../../seeds/answer');
 
-// router.post("/gamestart", withAuth, async (req, res) => {
-//   try {
-//     req.session.save(() => {
-//       res.status(200).json({ message: "Game Starting" });
-//     });
-//   } catch (err) {
-//     res.status(404).json({ title: "Error", message: err });
-//   }
-// });
+router.get('Question/:id', async (req, res) => {
+    const questionDisplay = await Question.findByPk(req.params.id);
+    console.log(questionDisplay)
+    res.render
+})
 
-// module.exports = router;
+module.exports = router;
  
