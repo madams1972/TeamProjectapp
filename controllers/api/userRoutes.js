@@ -1,11 +1,17 @@
-const router = require("express").Router()
-const {User} = require("../../models")
+const router = require("express").Router();
+const User = require("../../models/user");
 
-router.post("/", async (req, res) => {
+// router.post('/login', async(req, res)=>{
+//     try {
+//         // console.log(User)
+//         const userData= await User.findOne({where:{id:req.body.username} });
+//         console.log(userData)
+//     if (!userData){
+//         res
+router.post("/newuser", async (req, res) => {
   try {
     const userData = await User.create({
       username: req.body.username,
-      email: req.body.email,
       password: req.body.password,
     });
 
@@ -13,10 +19,8 @@ router.post("/", async (req, res) => {
       req.session.loggedIn = true;
       res.status(200).json(userData);
     });
-  } catch(err)
-  {
-    console.log(err);
-    res.status(500).json(err);
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 
@@ -60,4 +64,3 @@ router.post("/logout", (req, res) => {
   }
 });
 module.exports = router;
-
