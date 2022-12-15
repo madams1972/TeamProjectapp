@@ -1,34 +1,55 @@
-index.html
-<!DOCTYPE html>
-<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	{{!-- <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 </head>
-<body>
-	<div class="panel">
-		<div class="result">
 
-		</div>
-		<div class="question-container" id="question">
-			Question goes here.
-		</div>
-		<div class="option-container">
-			<button class="option" onclick="" id="op1" >option1</button>
-	
-			<button class="option" id="op2" >option2</button>
-	
-			<button class="option" id="op3">option3</button>
-	
-			<button class="option" id="op4">option4</button>
-		</div>
-		<div class="navigation">
-			<button class="evaluate">Evaluate</button>
-			<button class="next">Next</button>
-		</div>
-	</div>
-	<script src="script.js"></script>
+<body>
+	<section class="d-flex justify-content-center">
+		<div class="container py-5 h-100">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-xl-10">
+					<div class="card rounded-3 text-black" style="background-color: transparent;">
+						<div class="row g-0">
+							<div class="text-center">
+								<div class="panel">
+									<div class="result">
+									</div>
+									<div class="question-container" id="question">
+										Question goes here.
+									</div>
+									<div class="option-container">
+										<button class="option" onclick="" id="op1">option1</button>
+
+										<button class="option" id="op2">option2</button>
+
+										<button class="option" id="op3">option3</button>
+
+										<button class="option" id="op4">option4</button>
+									</div>
+									<div class="navigation">
+										<button class="evaluate">Evaluate</button>
+										<button class="next">Next</button>
+									</div>
+									<div>
+										<div>
+											<img src="../images/500_100.jpg" alt="Astronaut" width="500" height="500">
+										</div>
+									</div>
+								</div>
+								<script
+									src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+								<script src="script.js"></script>
+								<script>
+									anime({
+										targets: 'img',
+										left: '240px',
+										backgroundColor: '#FFF',
+										borderRadius: ['0%', '50%'],
+										easing: 'easeInOutQuad'
+									})
+								</script>
 </body>
+
 </html>
