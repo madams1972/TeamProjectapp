@@ -2,7 +2,7 @@ const loginFormHandler = async (event) => {
     event.preventDefault();
   
     // Collect values from the login form
-    const username = document.querySelector('#username-login').value.trim();
+    const username = document.querySelector('#email-address').value.trim();
     const password = document.querySelector('#password-login').value.trim();
     console.log({ username, password })
     if (username && password) {
@@ -22,8 +22,7 @@ const loginFormHandler = async (event) => {
       }
     }
   };
-
-
+ 
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);

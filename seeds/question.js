@@ -47,6 +47,8 @@ const questionData = [
   },
 ];
 
+module.exports = Question;
+
 const seedQuestion = () => Question.bulkCreate(questionData);
 
 module.exports = seedQuestion;

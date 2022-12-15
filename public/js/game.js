@@ -112,6 +112,7 @@ const Questions = [
   },
 ];
 
+
 // Set start
 var start = true;
 
@@ -208,9 +209,10 @@ var id = 0;
 
 next.addEventListener("click", () => {
   start = false;
-  if (id < 2) {
+  if (id < Questions.length) {
     id++;
     iterate(id);
     console.log(id);
   }
 });
+
